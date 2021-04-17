@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Menu from './Menu';
 import Categories from './Categories';
-import items from './data';
+import data from './data';
 
 function App() {
 
   const [menu, setMenu] = useState("All");
-  const [menuItems, setMenuItems] = useState(items);
+  const [menuItems, setMenuItems] = useState(data);
 
+  let items = data;
   let cat = items.map(item=>{
     return item.category
   })
@@ -27,7 +28,7 @@ function App() {
 
       <Categories categories={categories} />
 
-      <Menu/>
+      <Menu menu={data} />
 
       </section>
 
