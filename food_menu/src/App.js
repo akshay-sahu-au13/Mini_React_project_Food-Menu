@@ -8,8 +8,21 @@ function App() {
   const [menu, setMenu] = useState("All");
   const [menuItems, setMenuItems] = useState(data);
 
+  const filterMenu = (e)=> {
+    console.log(e.target.textContent)
+    const new_menu = e.target.textContent
+    setMenu(e.target.textContent);
+    const new_data = data.filter(item => {
+      console.log("Menu:", new_menu)
+      return item.category === new_menu;
+    })
+    setMenuItems(new_data)
+  }
+
+
+
   let items = data;
-  let cat = items.map(item=>{
+  let cat = items.map((item)=> {
     return item.category
   })
   let categories = cat.filter((item, index) => {
@@ -26,9 +39,9 @@ function App() {
         <div className="underline"></div>
       </div>
 
-      <Categories categories={categories} />
+      <Categories categories={categories} filter={filterMenu} />
 
-      <Menu menu={data} />
+      <Menu menu={menuItems} />
 
       </section>
 
