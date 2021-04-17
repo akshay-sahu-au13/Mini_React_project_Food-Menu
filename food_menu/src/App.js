@@ -5,15 +5,15 @@ import data from './data';
 
 function App() {
 
-  const [menu, setMenu] = useState("All");
+  // const [menu, setMenu] = useState("All");
   const [menuItems, setMenuItems] = useState(data);
 
   const filterMenu = (e)=> {
-    console.log(e.target.textContent)
+    // console.log(e.target.textContent)
     const new_menu = e.target.textContent
-    setMenu(e.target.textContent);
+    // setMenu(e.target.textContent);
     const new_data = data.filter(item => {
-      console.log("Menu:", new_menu)
+      // console.log("Menu:", new_menu)
       return item.category === new_menu;
     })
     setMenuItems(new_data)
@@ -29,7 +29,7 @@ function App() {
     return cat.indexOf(item) === index;
   });
 
-  console.log("Cat: ", categories)
+  // console.log("Cat: ", categories)
   return <>
     <main>
       <section className="menu section">
