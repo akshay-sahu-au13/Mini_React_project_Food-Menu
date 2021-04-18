@@ -12,6 +12,10 @@ function App() {
     // console.log(e.target.textContent)
     const new_menu = e.target.textContent
     // setMenu(e.target.textContent);
+    if (new_menu === "All"){
+      setMenuItems(data);
+      return 
+    }
     const new_data = data.filter(item => {
       // console.log("Menu:", new_menu)
       return item.category === new_menu;
