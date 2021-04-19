@@ -16,7 +16,7 @@ function App() {
       setMenuItems(data);
       return 
     }
-    const new_data = data.filter(item => {
+    const   new_data = data.filter(item => {
       // console.log("Menu:", new_menu)
       return item.category === new_menu;
     })
